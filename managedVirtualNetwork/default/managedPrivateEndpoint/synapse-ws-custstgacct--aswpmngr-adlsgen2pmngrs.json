@@ -1,0 +1,7 @@
+{
+	"name": "synapse-ws-custstgacct--aswpmngr-adlsgen2pmngrs",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/19fdcaed-3ae9-48bd-ad07-bfd02f94d21b/resourceGroups/AWPROJECT/providers/Microsoft.Storage/storageAccounts/adlsgen2pmngrs",
+		"groupId": "dfs"
+	}
+}
