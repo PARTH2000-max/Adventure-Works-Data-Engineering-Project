@@ -2,7 +2,10 @@
 
 🏗️ Adventure Works: Modern Data Architecture & Engineering
 
-<img width="1376" height="768" alt="project architecture" src="https://github.com/user-attachments/assets/59259a7e-58a4-4adc-9e10-c4ca7ee83059" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/59259a7e-58a4-4adc-9e10-c4ca7ee83059" alt="Adventure Works Data Engineering Architecture" width="800">
+</p>
+
 
 🚀 The Vision
 This project isn't just about processing the Adventure Works dataset; it is a functional blueprint of a production-ready Azure Data Architecture. It demonstrates how global enterprises handle high-volume data by moving it through a structured lifecycle—ensuring data remains clean, auditable, and accessible.
