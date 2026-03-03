@@ -1,6 +1,9 @@
 # Adventure-Works-Data-Engineering-Project
 
 🏗️ Adventure Works: Modern Data Architecture & Engineering
+
+<img width="1376" height="768" alt="project architecture" src="https://github.com/user-attachments/assets/59259a7e-58a4-4adc-9e10-c4ca7ee83059" />
+
 🚀 The Vision
 This project isn't just about processing the Adventure Works dataset; it is a functional blueprint of a production-ready Azure Data Architecture. It demonstrates how global enterprises handle high-volume data by moving it through a structured lifecycle—ensuring data remains clean, auditable, and accessible.
 
@@ -41,5 +44,3 @@ Visualization: Power BI (The "Insight" layer).
 
 🎯 The Ultimate Goal
 The objective of this architecture is Scalability and Reliability. By decoupling storage from compute and using a multi-layered approach, this system can handle a few gigabytes today and several terabytes tomorrow with minimal changes to the core logic.
-
-<img width="1376" height="768" alt="project architecture" src="https://github.com/user-attachments/assets/59259a7e-58a4-4adc-9e10-c4ca7ee83059" />
