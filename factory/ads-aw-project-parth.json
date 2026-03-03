@@ -1,0 +1,9 @@
+{
+	"name": "ads-aw-project-parth",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b21df830-95eb-497a-b5ab-b2f8e13c06cd",
+		"tenantId": "7538581d-720a-4a01-b2fd-3699d59353e6"
+	}
+}
