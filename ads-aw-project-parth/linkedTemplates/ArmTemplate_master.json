@@ -1,0 +1,138 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ads-aw-project-parth"
+		},
+		"adls_connector_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'adls_connector'"
+		},
+		"aswpmngr-WorkspaceDefaultSqlServer_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'aswpmngr-WorkspaceDefaultSqlServer'",
+			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:aswpmngr.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"adls_connector_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pmnadlsdatalake.dfs.core.windows.net/"
+		},
+		"aswpmngr-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsgen2pmngrs.dfs.core.windows.net"
+		},
+		"github_connector_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com"
+		},
+		"synapse-ws-custstgacct--aswpmngr-adlsgen2pmngrs_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/19fdcaed-3ae9-48bd-ad07-bfd02f94d21b/resourceGroups/AWPROJECT/providers/Microsoft.Storage/storageAccounts/adlsgen2pmngrs"
+		},
+		"synapse-ws-custstgacct--aswpmngr-adlsgen2pmngrs_properties_groupId": {
+			"type": "string",
+			"defaultValue": "dfs"
+		},
+		"synapse-ws-sql--aswpmngr_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/19fdcaed-3ae9-48bd-ad07-bfd02f94d21b/resourceGroups/AWPROJECT/providers/Microsoft.Synapse/workspaces/aswpmngr"
+		},
+		"synapse-ws-sql--aswpmngr_properties_groupId": {
+			"type": "string",
+			"defaultValue": "sql"
+		},
+		"synapse-ws-sql--aswpmngr_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"aswpmngr.f7520002-40e5-4847-83d0-a276de41b68b.sql.azuresynapse.net"
+			]
+		},
+		"synapse-ws-sqlOnDemand--aswpmngr_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/19fdcaed-3ae9-48bd-ad07-bfd02f94d21b/resourceGroups/AWPROJECT/providers/Microsoft.Synapse/workspaces/aswpmngr"
+		},
+		"synapse-ws-sqlOnDemand--aswpmngr_properties_groupId": {
+			"type": "string",
+			"defaultValue": "sqlOnDemand"
+		},
+		"synapse-ws-sqlOnDemand--aswpmngr_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"aswpmngr-ondemand.f7520002-40e5-4847-83d0-a276de41b68b.sql.azuresynapse.net"
+			]
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ads-aw-project-parth_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"adls_connector_accountKey": {
+						"value": "[parameters('adls_connector_accountKey')]"
+					},
+					"aswpmngr-WorkspaceDefaultSqlServer_connectionString": {
+						"value": "[parameters('aswpmngr-WorkspaceDefaultSqlServer_connectionString')]"
+					},
+					"adls_connector_properties_typeProperties_url": {
+						"value": "[parameters('adls_connector_properties_typeProperties_url')]"
+					},
+					"github_connector_properties_typeProperties_url": {
+						"value": "[parameters('github_connector_properties_typeProperties_url')]"
+					},
+					"synapse-ws-custstgacct--aswpmngr-adlsgen2pmngrs_properties_privateLinkResourceId": {
+						"value": "[parameters('synapse-ws-custstgacct--aswpmngr-adlsgen2pmngrs_properties_privateLinkResourceId')]"
+					},
+					"synapse-ws-custstgacct--aswpmngr-adlsgen2pmngrs_properties_groupId": {
+						"value": "[parameters('synapse-ws-custstgacct--aswpmngr-adlsgen2pmngrs_properties_groupId')]"
+					},
+					"synapse-ws-sql--aswpmngr_properties_privateLinkResourceId": {
+						"value": "[parameters('synapse-ws-sql--aswpmngr_properties_privateLinkResourceId')]"
+					},
+					"synapse-ws-sql--aswpmngr_properties_groupId": {
+						"value": "[parameters('synapse-ws-sql--aswpmngr_properties_groupId')]"
+					},
+					"synapse-ws-sql--aswpmngr_properties_fqdns": {
+						"value": "[parameters('synapse-ws-sql--aswpmngr_properties_fqdns')]"
+					},
+					"synapse-ws-sqlOnDemand--aswpmngr_properties_privateLinkResourceId": {
+						"value": "[parameters('synapse-ws-sqlOnDemand--aswpmngr_properties_privateLinkResourceId')]"
+					},
+					"synapse-ws-sqlOnDemand--aswpmngr_properties_groupId": {
+						"value": "[parameters('synapse-ws-sqlOnDemand--aswpmngr_properties_groupId')]"
+					},
+					"synapse-ws-sqlOnDemand--aswpmngr_properties_fqdns": {
+						"value": "[parameters('synapse-ws-sqlOnDemand--aswpmngr_properties_fqdns')]"
+					},
+					"aswpmngr-WorkspaceDefaultStorage_properties_typeProperties_url": {
+						"value": "[parameters('aswpmngr-WorkspaceDefaultStorage_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

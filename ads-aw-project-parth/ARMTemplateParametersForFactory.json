@@ -1,0 +1,52 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ads-aw-project-parth"
+		},
+		"adls_connector_accountKey": {
+			"value": ""
+		},
+		"aswpmngr-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:aswpmngr.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"adls_connector_properties_typeProperties_url": {
+			"value": "https://pmnadlsdatalake.dfs.core.windows.net/"
+		},
+		"aswpmngr-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://adlsgen2pmngrs.dfs.core.windows.net"
+		},
+		"github_connector_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com"
+		},
+		"synapse-ws-custstgacct--aswpmngr-adlsgen2pmngrs_properties_privateLinkResourceId": {
+			"value": "/subscriptions/19fdcaed-3ae9-48bd-ad07-bfd02f94d21b/resourceGroups/AWPROJECT/providers/Microsoft.Storage/storageAccounts/adlsgen2pmngrs"
+		},
+		"synapse-ws-custstgacct--aswpmngr-adlsgen2pmngrs_properties_groupId": {
+			"value": "dfs"
+		},
+		"synapse-ws-sql--aswpmngr_properties_privateLinkResourceId": {
+			"value": "/subscriptions/19fdcaed-3ae9-48bd-ad07-bfd02f94d21b/resourceGroups/AWPROJECT/providers/Microsoft.Synapse/workspaces/aswpmngr"
+		},
+		"synapse-ws-sql--aswpmngr_properties_groupId": {
+			"value": "sql"
+		},
+		"synapse-ws-sql--aswpmngr_properties_fqdns": {
+			"value": [
+				"aswpmngr.f7520002-40e5-4847-83d0-a276de41b68b.sql.azuresynapse.net"
+			]
+		},
+		"synapse-ws-sqlOnDemand--aswpmngr_properties_privateLinkResourceId": {
+			"value": "/subscriptions/19fdcaed-3ae9-48bd-ad07-bfd02f94d21b/resourceGroups/AWPROJECT/providers/Microsoft.Synapse/workspaces/aswpmngr"
+		},
+		"synapse-ws-sqlOnDemand--aswpmngr_properties_groupId": {
+			"value": "sqlOnDemand"
+		},
+		"synapse-ws-sqlOnDemand--aswpmngr_properties_fqdns": {
+			"value": [
+				"aswpmngr-ondemand.f7520002-40e5-4847-83d0-a276de41b68b.sql.azuresynapse.net"
+			]
+		}
+	}
+}
